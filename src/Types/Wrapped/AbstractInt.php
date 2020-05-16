@@ -2,17 +2,21 @@
 namespace CodeKandis\Shorty\Types\Wrapped;
 
 use CodeKandis\Shorty\AbstractObject;
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
+use CodeKandis\Shorty\Data\Serialization\SerializationPropertyAttribute;
 
 /**
  * Represents the base class of all wrapped `int` types.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute()
  */
 abstract class AbstractInt extends AbstractObject implements IntInterface
 {
 	/**
 	 * Stores the value of the wrapped `int`.
 	 * @var int
+	 * @SerializationPropertyAttribute()
 	 */
 	protected int $value;
 
