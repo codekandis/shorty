@@ -2,6 +2,8 @@
 namespace CodeKandis\Shorty\Collections;
 
 use CodeKandis\Shorty\ArrayableInterface;
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
+use CodeKandis\Shorty\Data\Serialization\SerializationPropertyAttribute;
 use CodeKandis\Shorty\RecursivelyArrayableInterface;
 use CodeKandis\Shorty\Utilities\Converters\OneWayConverterInterface;
 use CodeKandis\Shorty\Utilities\Predictors\PredictorInterface;
@@ -17,6 +19,7 @@ use function sprintf;
  * Represents an immutable list of various elements. A set contains elements strictly unique by their type and their value.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 class ImmutableSet implements ImmutableListInterface
 {
@@ -59,8 +62,9 @@ class ImmutableSet implements ImmutableListInterface
 	/**
 	 * Stores the internal list of elements.
 	 * @var array
+	 * @SerializationPropertyAttribute()
 	 */
-	private array $elements = [];
+	protected array $elements = [];
 
 	/**
 	 * Stores the element validator of the list.
