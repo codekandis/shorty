@@ -2,6 +2,8 @@
 namespace CodeKandis\Shorty\Collections;
 
 use CodeKandis\Shorty\ArrayableInterface;
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
+use CodeKandis\Shorty\Data\Serialization\SerializationPropertyAttribute;
 use CodeKandis\Shorty\RecursivelyArrayableInterface;
 use CodeKandis\Shorty\Utilities\Converters\OneWayConverterInterface;
 use CodeKandis\Shorty\Utilities\Predictors\PredictorInterface;
@@ -19,6 +21,7 @@ use function sprintf;
  * Represents a mutable list of elements. A set contains unique elements.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 class Set implements ListInterface
 {
@@ -67,8 +70,9 @@ class Set implements ListInterface
 	/**
 	 * Stores the internal list of elements.
 	 * @var array
+	 * @SerializationPropertyAttribute()
 	 */
-	private array $elements = [];
+	protected array $elements = [];
 
 	/**
 	 * Stores the element validator of the list.
