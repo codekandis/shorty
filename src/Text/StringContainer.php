@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Shorty\Text;
 
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
 use CodeKandis\Shorty\Types\Wrapped\AbstractString;
 use function mb_convert_encoding;
 use function mb_strlen;
@@ -9,6 +10,7 @@ use function mb_strlen;
  * Represents a `string` container providing character encoding safe operations.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 class StringContainer extends AbstractString implements StringContainerInterface
 {
