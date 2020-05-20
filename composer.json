@@ -34,6 +34,7 @@
 	},
 	"require": {
 		"php": ">=7.4",
+		"ext-fileinfo": "*",
 		"codekandis/constants-classes-translator": "^1",
 		"codekandis/json-codec": "^1",
 		"doctrine/annotations": "^1"
