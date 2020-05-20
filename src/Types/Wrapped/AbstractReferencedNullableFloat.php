@@ -2,17 +2,21 @@
 namespace CodeKandis\Shorty\Types\Wrapped;
 
 use CodeKandis\Shorty\AbstractObject;
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
+use CodeKandis\Shorty\Data\Serialization\SerializationPropertyAttribute;
 
 /**
  * Represents the base class of all wrapped referenced `nullable float` types.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 abstract class AbstractReferencedNullableFloat extends AbstractObject implements ReferencedNullableFloatInterface
 {
 	/**
 	 * Stores the value of the wrapped referenced `nullable float`.
 	 * @var null|float
+	 * @SerializationPropertyAttribute()
 	 */
 	protected ?float $value;
 
