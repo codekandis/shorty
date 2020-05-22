@@ -2,6 +2,8 @@
 namespace CodeKandis\Shorty\Types\Wrapped;
 
 use CodeKandis\Shorty\AbstractObject;
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
+use CodeKandis\Shorty\Data\Serialization\SerializationPropertyAttribute;
 use function array_filter;
 use function implode;
 use function preg_replace;
@@ -12,12 +14,14 @@ use function var_export;
  * Represents the base class of all wrapped `nullable array` types.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 abstract class AbstractNullableArray extends AbstractObject implements NullableArrayInterface
 {
 	/**
 	 * Stores the value of the wrapped `nullable array`.
 	 * @var null|array
+	 * @SerializationPropertyAttribute()
 	 */
 	private ?array $value;
 
