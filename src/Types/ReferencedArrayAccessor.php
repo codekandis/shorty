@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Shorty\Types;
 
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
 use CodeKandis\Shorty\Types\Wrapped\AbstractReferencedArray;
 use function array_key_exists;
 use function count;
@@ -10,6 +11,7 @@ use function sprintf;
  * Represents an array accessor managing an array by reference.
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 class ReferencedArrayAccessor extends AbstractReferencedArray implements ReferencedArrayAccessorInterface
 {
