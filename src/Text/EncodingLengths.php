@@ -1,6 +1,7 @@
 <?php declare( strict_types = 1 );
 namespace CodeKandis\Shorty\Text;
 
+use CodeKandis\Shorty\Data\Serialization\SerializationContractAttribute;
 use CodeKandis\Shorty\Types\Wrapped\AbstractInt;
 
 /**
@@ -8,6 +9,7 @@ use CodeKandis\Shorty\Types\Wrapped\AbstractInt;
  * @see https://www.php.net/manual/en/mbstring.supported-encodings.php
  * @package codekandis/shorty
  * @author Christian Ramelow <info@codekandis.net>
+ * @SerializationContractAttribute( serializeSinglePropertyOnly = true )
  */
 class EncodingLengths extends AbstractInt implements EncodingLengthsInterface
 {
